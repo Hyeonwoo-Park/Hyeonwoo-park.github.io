@@ -121,7 +121,23 @@
             top: 50%;
             transform: translate(-50%, -50%);
             z-index: -1;
-            color: #FFB6C1; /* 핑크색 하트 */
+            color: #FFB6C1;
+        }
+        .celebrate-btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #FFB6C1;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .celebrate-btn:hover {
+            background-color: #FF69B4;
         }
     </style>
 </head>
@@ -169,7 +185,7 @@
         <div class="date-location">
             <h2>Location</h2>
             <p>목화 웨딩 컨벤션 밸리스홀</p>
-            <p>부산 연제구 연산동 1124-3 시티타워 15F (구 목화예식장 자리)</p>
+            <p>부산광역시 연제구 중앙대로 1125</p>
         </div>
         
         <div class="message">
@@ -197,15 +213,19 @@
         
         <div class="address">
             <h2>Address</h2>
-            <p>부산 연제구 연산동 1124-3 시티타워 15F (구 목화예식장 자리)</p>
+            <p>부산광역시 연제구 중앙대로 1125</p>
             <p>부산 1호선 연산역 7번 출구에서 도보 1분 거리</p>
         </div>
         
         <h2>Map</h2>
         <div class="google-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.2261800392825!2d129.07738111744384!3d35.18606999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3568eb7a680e5c2d%3A0x6d48b8b898c7fd16!2z66qo7ZmU7Juo65OcIOy7tO2ZlOuztOyLnA!5e0!3m2!1sko!2skr!4v1632919754456!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.2261800392825!2d129.07738111744384!3d35.18606999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3568eb7a680e5c2d%3A0x6d48b8b898c7fd16!2z67aA7IKw6rSR7Jet7IucIOyXsOyynOq1rCDspJHslZnrjIDroZwgMTEyNQ!5e0!3m2!1sko!2skr!4v1632919754456!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
+
+        <button class="celebrate-btn">축하하기</button>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@0.9.0/dist/js-confetti.browser.js"></script>
     <script>
         const gallery = document.querySelector('.gallery-container');
         const slides = document.querySelectorAll('.gallery-slide');
@@ -230,6 +250,20 @@
 
         // 초기 슬라이드 표시
         showSlide(0);
+
+        // 컨페티 효과 추가
+        const jsConfetti = new JSConfetti();
+        const celebrateBtn = document.querySelector('.celebrate-btn');
+
+        celebrateBtn.addEventListener('click', () => {
+            jsConfetti.addConfetti({
+                confettiColors: [
+                    '#ff0a54', '#ff477e', '#ff7096', '#ff85a1', '#fbb1bd', '#f9bec7',
+                ],
+                confettiRadius: 6,
+                confettiNumber: 500,
+            });
+        });
     </script>
 </body>
 </html>
