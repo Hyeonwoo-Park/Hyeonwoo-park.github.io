@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>현우 & 새라의 결혼식에 초대합니다</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nanum Myeongjo', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 15px;
+        }
+        h1, h2 {
+            font-family: 'Great Vibes', cursive;
+            text-align: center;
+            color: #8e6b4e;
+        }
+        h1 { font-size: 3.5em; margin-bottom: 20px; }
+        h2 { font-size: 2.5em; margin-top: 30px; margin-bottom: 15px; }
+        .couple-names {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.8em;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #8e6b4e;
+        }
+        .main-photo, .date-location, .message, .contact, .address {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .main-photo img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .gallery {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            overflow: hidden;
+        }
+        .gallery-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .gallery-slide {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+        .gallery-slide img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .gallery-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(142, 107, 78, 0.7);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        .gallery-btn:hover {
+            background-color: rgba(142, 107, 78, 0.9);
+        }
+        .gallery-btn.prev { left: 10px; }
+        .gallery-btn.next { right: 10px; }
+        .google-map {
+            position: relative;
+            padding-bottom: 75%;
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        .google-map iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+        .calendar {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        .calendar th, .calendar td {
+            border: none;
+            padding: 10px;
+            text-align: center;
+        }
+        .calendar th {
+            background-color: #f2f2f2;
+        }
+        .calendar .highlight {
+            position: relative;
+            color: #333;
+            font-weight: bold;
+        }
+        .calendar .highlight::before {
+            content: '❤️';
+            position: absolute;
+            font-size: 2.5em;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            color: #FFB6C1; /* 핑크색 하트 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Wedding Invitation</h1>
+        
+        <div class="couple-names">
+            <p>현우 & 새라</p>
+        </div>
+        
+        <div class="main-photo">
+            <img src="https://via.placeholder.com/600x400?text=Main+Photo" alt="Main Photo">
+        </div>
+        
+        <div class="date-location">
+            <h2>Date & Time</h2>
+            <p>2024년 11월 30일 토요일</p>
+            <p>오후 12시 30분</p>
+        </div>
+        
+        <table class="calendar">
+            <caption>November 2024</caption>
+            <tr>
+                <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td>
+            </tr>
+            <tr>
+                <td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
+            </tr>
+            <tr>
+                <td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td>
+            </tr>
+            <tr>
+                <td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td>
+            </tr>
+            <tr>
+                <td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td>
+                <td class="highlight">30</td>
+            </tr>
+        </table>
+        
+        <div class="date-location">
+            <h2>Location</h2>
+            <p>목화 웨딩 컨벤션 밸리스홀</p>
+            <p>부산 연제구 연산동 1124-3 시티타워 15F (구 목화예식장 자리)</p>
+        </div>
+        
+        <div class="message">
+            <h2>Invitation</h2>
+            <p>저희 두 사람이 사랑과 믿음으로 한 가정을 이루게 되었습니다.</p>
+            <p>귀한 걸음 하시어 축복해 주시면 감사하겠습니다.</p>
+        </div>
+        
+        <div class="contact">
+            <h2>Contact</h2>
+            <p>신랑 박현우: 010-1234-5678</p>
+            <p>신부 정새라: 010-8765-4321</p>
+        </div>
+        
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <div class="gallery-container">
+                <div class="gallery-slide"><img src="https://via.placeholder.com/600x400?text=Gallery+1" alt="Gallery 1"></div>
+                <div class="gallery-slide"><img src="https://via.placeholder.com/600x400?text=Gallery+2" alt="Gallery 2"></div>
+                <div class="gallery-slide"><img src="https://via.placeholder.com/600x400?text=Gallery+3" alt="Gallery 3"></div>
+            </div>
+            <button class="gallery-btn prev">&lt;</button>
+            <button class="gallery-btn next">&gt;</button>
+        </div>
+        
+        <div class="address">
+            <h2>Address</h2>
+            <p>부산 연제구 연산동 1124-3 시티타워 15F (구 목화예식장 자리)</p>
+            <p>부산 1호선 연산역 7번 출구에서 도보 1분 거리</p>
+        </div>
+        
+        <h2>Map</h2>
+        <div class="google-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.2261800392825!2d129.07738111744384!3d35.18606999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3568eb7a680e5c2d%3A0x6d48b8b898c7fd16!2z66qo7ZmU7Juo65OcIOy7tO2ZlOuztOyLnA!5e0!3m2!1sko!2skr!4v1632919754456!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+    <script>
+        const gallery = document.querySelector('.gallery-container');
+        const slides = document.querySelectorAll('.gallery-slide');
+        const prevBtn = document.querySelector('.gallery-btn.prev');
+        const nextBtn = document.querySelector('.gallery-btn.next');
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            if (index < 0) {
+                currentIndex = slides.length - 1;
+            } else if (index >= slides.length) {
+                currentIndex = 0;
+            } else {
+                currentIndex = index;
+            }
+            const offset = -currentIndex * 100;
+            gallery.style.transform = `translateX(${offset}%)`;
+        }
+
+        prevBtn.addEventListener('click', () => showSlide(currentIndex - 1));
+        nextBtn.addEventListener('click', () => showSlide(currentIndex + 1));
+
+        // 초기 슬라이드 표시
+        showSlide(0);
+    </script>
+</body>
+</html>
