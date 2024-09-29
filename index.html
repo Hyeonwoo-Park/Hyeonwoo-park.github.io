@@ -126,9 +126,20 @@
         }
         .map-container {
             width: 100%;
-            max-width: 640px;
+            max-width: 600px;
             margin: 0 auto;
-            height: 360px;
+        }
+        .map-container img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+        }
+        .map-info {
+            font-size: 12px;
+            padding: 7px 11px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-top: none;
+            background-color: rgb(249, 249, 249);
         }
     </style>
 </head>
@@ -207,11 +218,26 @@
         </div>
         
         <h2>Map</h2>
-        <div class="map-container" id="map"></div>
+        <div class="map-container">
+            <a href="https://map.kakao.com/?urlX=973803.0&amp;urlY=474855.0&amp;itemId=24484800&amp;q=%EB%AA%A9%ED%99%94%EC%9B%A8%EB%94%A9%EC%BB%A8%EB%B2%A4%EC%85%98&amp;srcid=24484800&amp;map_type=TYPE_MAP&amp;from=roughmap" target="_blank">
+                <img src="http://t1.daumcdn.net/roughmap/imgmap/85c5e37c08289d22a69b2356c60c6e80f0edfda162af810adf7182b2e595edb4" alt="지도">
+            </a>
+            <div class="map-info">
+                <a href="https://map.kakao.com" target="_blank" style="float: left;">
+                    <img src="//t1.daumcdn.net/localimg/localimages/07/2018/pc/common/logo_kakaomap.png" width="72" height="16" alt="카카오맵" style="display:block;width:72px;height:16px">
+                </a>
+                <div style="float: right;">
+                    <a target="_blank" href="https://map.kakao.com/?from=roughmap&amp;srcid=24484800&amp;confirmid=24484800&amp;q=%EB%AA%A9%ED%99%94%EC%9B%A8%EB%94%A9%EC%BB%A8%EB%B2%A4%EC%85%98&amp;rv=on">로드뷰</a>
+                    <span style="padding: 0 7px;">|</span>
+                    <a target="_blank" href="https://map.kakao.com/?from=roughmap&amp;eName=%EB%AA%A9%ED%99%94%EC%9B%A8%EB%94%A9%EC%BB%A8%EB%B2%A4%EC%85%98&amp;eX=973803.0&amp;eY=474855.0">길찾기</a>
+                    <span style="padding: 0 7px;">|</span>
+                    <a target="_blank" href="https://map.kakao.com?map_type=TYPE_MAP&amp;from=roughmap&amp;srcid=24484800&amp;itemId=24484800&amp;q=%EB%AA%A9%ED%99%94%EC%9B%A8%EB%94%A9%EC%BB%A8%EB%B2%A4%EC%85%98&amp;urlX=973803.0&amp;urlY=474855.0">지도 크게 보기</a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/js-confetti@0.9.0/dist/js-confetti.browser.js"></script>
-    <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js" partitioned></script>
 
     <script>
     window.onload = function() {
@@ -252,29 +278,6 @@
                 confettiNumber: 500,
             });
         });
-
-        // 카카오맵 초기화
-        function initMap() {
-            console.log(daum)
-            console.log(daum.roughmap)
-            if (typeof daum !== 'undefined' && daum.roughmap) {
-                new daum.roughmap.Lander({
-                    "timestamp": "1727505043188",
-                    "key": "2kro7",
-                    "mapWidth": "100%",
-                    "mapHeight": "100%"
-                }).render();
-            } else {
-                console.error('Kakao map API is not loaded properly');
-            }
-        }
-
-        // 카카오맵 API 로드 완료 후 지도 초기화
-        if (window.daum && window.daum.roughmap) {
-            initMap();
-        } else {
-            window.addEventListener('load', initMap);
-        }
     }
     </script>
 </body>
